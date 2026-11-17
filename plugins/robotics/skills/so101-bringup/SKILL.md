@@ -28,15 +28,36 @@ Follow this staged workflow under `R1–R16` (auto-advancing across software, `-
    - Create a persistent `tmux` session named `robot` (`tmux new-session -d -s robot`), verify two-way command/capture (`tmux send-keys` + `tmux capture-pane`), tell the human how to watch live (`tmux attach -t robot`), and proceed directly to Stage 1 without waiting for sign-off.
 
 2. **Stage 1 — Read-Only Serial Bus & Camera Discovery (Torque OFF, `R4`, `R16`)**:
-   - Auto-detect the serial port with [read_motors.py](scripts/read_motors.py) `--port auto` (uses the single `/dev/tty.usbmodem*` or `/dev/ttyACM*` device) and verify all 6 STS3215 servos (IDs `1..6` at `1,000,000` baud) respond with `Torque_Enable = 0`. Only if zero or several candidates are found, fall back to `lerobot-find-port` inside `tmux` session `robot` (human unplugs/re-plugs USB):
+   - Auto-detect the serial port with [read_motors.py](scripts/read_motors.py)
+     `--port auto` (uses the single `/dev/tty.usbmodem*` or `/dev/ttyACM*`
+     device) to verify all 6 STS3215 servos (IDs `1..6` at `1,000,000` baud)
+     respond with `Torque_Enable = 0` and read their EEPROM calibration into
+     LeRobot's default calibration cache when valid (`calibration_valid: true`
+     and `calibration_file` in `motors_readonly.json`). Only if zero or several
+     candidates are found, fall back to `lerobot-find-port` inside `tmux`
+     session `robot` (human unplugs/re-plugs USB):
      ```bash
      python3 scripts/read_motors.py --port auto --output data/stage1/motors_readonly.json
      ```
    - Automatically enumerate OS cameras, capture stills (`camera_0.png`, `camera_1.png`, ...), and check lighting brightness (`0–255`, flagging `TOO_DARK` or `TOO_BRIGHT_OR_GLARE`) using [discover_cameras.py](scripts/discover_cameras.py). If exactly 1 camera is found, use it without asking (role `wrist` if the jaw tips are visible at the bottom of the still, otherwise `fixed`). Ask the human about roles only when 2 or more cameras are found or a laptop built-in camera is detected (not recommended; it must stay completely still facing the robot).
-   - Save the port, camera roles/indices, and stills in `config/robot_config.json` and `NOTES.md`.
+   - Save the port, `calibration_file` (and `rest_pose` when computed from
+     EEPROM), camera roles/indices, and stills in `config/robot_config.json`
+     and `NOTES.md`.
 
 3. **Stage 2 — Joint Calibration, `rest_pose` & Abort Key (`R1–R5`, single `"go"` for bring-up motion)**:
-   - If `~/.cache/huggingface/lerobot/calibration/robots/so101_follower/my_follower.json` already exists and every joint span is `>= 45°`, reuse it and skip `lerobot-calibrate` (`run_preflight()` still verifies it matches the motor EEPROM before torque ON). Otherwise, with torque OFF (`R16`), run `lerobot-calibrate --robot.type=so101_follower --robot.port=... --robot.id=my_follower` inside `tmux` session `robot` (human moves arm to middle of joint ranges + `Enter`, then sweeps full min-to-max ranges + `Enter`) and flag any joint with span `< 45°`.
+   - Reuse motor EEPROM calibration by default without asking the human to
+     recalibrate: if `data/stage1/motors_readonly.json` reports
+     `calibration_valid: true` (or a valid calibration file already exists in
+     LeRobot's cache and matches EEPROM via `run_preflight()`), reuse
+     `calibration_file` and skip `lerobot-calibrate`. Otherwise (uncalibrated
+     EEPROM or explicit recalibration request), with torque OFF (`R16`), run
+     `lerobot-calibrate` inside `tmux` session `robot` (human moves arm to
+     middle of joint ranges + `Enter`, then sweeps full min-to-max ranges +
+     `Enter`) and flag any body joint with span `< 45°` (or gripper `< 20°`):
+     ```bash
+     lerobot-calibrate --robot.type=so101_follower \
+       --robot.port=/dev/tty.usbmodem... --robot.id=my_follower
+     ```
    - Automatically run `--mode abort-test --dry-run` (`R2`, torque OFF, planned from the Stage 1 read-only snapshot) without asking for confirmation, then ask the human once for `"go"` (`R1`, covering `--mode abort-test` and Stage 3 `hello_world.py` while the workspace remains clear; any `connect()` turns torque ON, so nothing connects before the `"go"`). Run a single slow `5°` base nudge with [check_robot.py](scripts/check_robot.py) during which the human types `q` + `Enter`; the script records `rest_pose` before moving:
      ```bash
      python3 scripts/check_robot.py --mode abort-test --dry-run
