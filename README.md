@@ -128,8 +128,8 @@ overview.
 
 ## Contributing and security
 
-*   **Contributing**: Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a
-    pull request, or
+*   **Contributing**: See [CONTRIBUTING.md](CONTRIBUTING.md) for our
+    contribution policy, or
     [open an issue](https://github.com/google-deepmind/robotics-antigravity-plugin/issues)
     for bug reports and feature requests.
 *   **Security**: Eligibility for the

@@ -1,33 +1,27 @@
-# How to Contribute
+# Contributing to Robotics Antigravity Plugin
 
-## Contributor License Agreement
+Thank you for your interest in the Robotics Antigravity Plugin repository!
 
-Contributions to this project must be accompanied by a Contributor License
-Agreement. You (or your employer) retain the copyright to your contribution,
-this simply gives us permission to use and redistribute your contributions as
-part of the project. Head over to <https://cla.developers.google.com/> to see
-your current agreements on file or to sign a new one.
+## Our Contribution Policy
 
-You generally only need to submit a CLA once, so if you've already submitted one
-(even if it was for a different project), you probably don't need to do it
-again.
+At this time, we are not accepting external pull requests or code contributions.
 
-## Code Reviews
+## How You Can Help
 
-All submissions, including submissions by project members, require review. We
-use GitHub pull requests for this purpose. Consult
-[GitHub Help](https://help.github.com/articles/about-pull-requests/) for more
-information on using pull requests.
+Your feedback is invaluable for improving the quality of these skills. For any
+of the below, please
+[open an issue](https://github.com/google-deepmind/robotics-antigravity-plugin/issues):
 
-### Plugin and Skill Guidelines
+-   Hardware bring-up, calibration, or simulation bugs within the provided
+    scripts or MuJoCo assets.
+-   Skill instruction errors, missing prerequisites, or broken links.
+-   Feature requests and workflow suggestions.
 
--   Place general, robot-agnostic capabilities under `plugins/robotics/skills/`
-    and platform-specific bring-up, kinematics, or hardware parameters under
-    `plugins/<platform>/skills/`.
--   Ensure every skill folder name matches the `name:` field in its `SKILL.md`
-    YAML frontmatter.
--   Include the standard Apache 2.0 `Copyright 2026 Google LLC` header at the
-    top of any new `.py` or `.sh` script.
+## Share Your Examples
+
+Built a robot or MuJoCo simulation workflow? Post a link to your example
+repository, demo video, or prompt in
+[GitHub Discussions](https://github.com/google-deepmind/robotics-antigravity-plugin/discussions).
 
 ## Community Guidelines
 
