@@ -7,6 +7,8 @@ description: >-
   VLM + segmentation fallback), plane projection, or two-view stereo. Use when
   localizing graspable objects for a robot arm without a depth sensor. Don't use
   for non-robotics computer vision, CCTV, or AR apps.
+metadata:
+  publisher: google
 ---
 
 # RGB-Only 3D Object Localization ([`rgb_localization.py`](scripts/rgb_localization.py))

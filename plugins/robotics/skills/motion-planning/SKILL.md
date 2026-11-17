@@ -7,6 +7,8 @@ description: >-
   clearance diagnostics, and camera overlay checks. Use when planning robot arm
   trajectories near tabletop obstacles, containers, doors, or apertures. Don't
   use for eye-in-hand servoing (use visual-servoing) or non-robot pathfinding.
+metadata:
+  publisher: google
 ---
 
 <!-- disableFinding(LINE_OVER_80) -->

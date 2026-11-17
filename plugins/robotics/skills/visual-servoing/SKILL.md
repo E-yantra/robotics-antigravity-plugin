@@ -7,6 +7,8 @@ description: >-
   feature-matching IBVS). Use only for closed-loop eye-in-hand robot gripper
   visual servoing before grasping or manipulation. Don't use for non-robot
   microscope, telescope/PTZ, AR glasses, or homography tasks.
+metadata:
+  publisher: google
 ---
 
 # Eye-in-Hand Visual Servoing ([`Ibvs`](scripts/ibvs.py))

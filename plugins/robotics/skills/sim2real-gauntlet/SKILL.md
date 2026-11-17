@@ -7,6 +7,8 @@ description: >-
   verifying, hill-climbing, or debugging a MuJoCo robot manipulation controller,
   auditing a task scene/goal predicate, or forking a failed episode. Don't use
   for RL training (use mujoco-playground-rl) or non-robotics tasks.
+metadata:
+  publisher: google
 ---
 
 # Sim-to-Real Gauntlet (`robosim_gauntlet`)

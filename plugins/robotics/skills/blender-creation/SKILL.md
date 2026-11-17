@@ -13,6 +13,8 @@ description: >-
   text description, or when blender-creation
   is named. Don't use for non-MuJoCo
   Blender/Cycles/CAD modeling.
+metadata:
+  publisher: google
 ---
 
 # Authoring 3D MuJoCo Assets from Scratch in Blender (`bpy` / `bmesh` + PBR)

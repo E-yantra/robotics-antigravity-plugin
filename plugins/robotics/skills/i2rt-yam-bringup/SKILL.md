@@ -7,6 +7,8 @@ description: >-
   simulated I2RT YAM robot arm, or when asked to run a wave gesture on an I2RT
   YAM robot. Don't use for non-YAM CAN bus debugging (e.g. automotive OBD-II or
   industrial PLC CAN networks) or non-robotics tasks.
+metadata:
+  publisher: google
 ---
 
 # I2RT YAM SDK & CAN Bringup

@@ -8,6 +8,8 @@ description: >-
   evaluating locomotion/manipulation RL policies, or deploying RSL-RL
   checkpoints. Don't use for non-RL controllers (use mujoco-playground) or
   non-MuJoCo RL.
+metadata:
+  publisher: google
 ---
 
 # MuJoCo Playground RL Task Authoring & Training ([`rl_task_check.py`](scripts/rl_task_check.py))

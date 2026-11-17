@@ -1,6 +1,8 @@
 ---
 name: fr3-duo-control
 description: Franka Duo robot only (Franka Research 3 / FR3 Duo dual-arm cell with Robotiq 2F-85 grippers, ZED Mini and RealSense D405 cameras). Brings up, homes, and controls it via pylibfranka on hardware or in MuJoCo sim. Use only when the user names Franka Duo, FR3 Duo, or fr3_duo.
+metadata:
+  publisher: google
 ---
 
 # Franka Research 3 Duo Control (`fr3_duo`)

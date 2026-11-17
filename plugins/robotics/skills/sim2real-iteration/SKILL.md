@@ -7,6 +7,8 @@ description: >-
   reviews. Use only when iterating on MuJoCo robot manipulation controllers,
   triaging contact/safety failures, or comparing controller candidates. Don't
   use for RL training (use mujoco-playground-rl) or non-robotics tuning.
+metadata:
+  publisher: google
 ---
 
 # Sim-to-Real Controller Iteration

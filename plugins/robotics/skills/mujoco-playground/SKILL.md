@@ -7,6 +7,8 @@ description: >-
   IK, motion-planning, and visual-servoing skills. Use by default for SO-101,
   YAM, G1, or WXAI sim or sim-to-real controllers. Don't use for custom raw
   drivers, GPU RL training (use mujoco-playground-rl), or non-robotics tasks.
+metadata:
+  publisher: google
 ---
 
 # MuJoCo Playground Sim-to-Real Composition ([`playground_sim2real.py`](scripts/playground_sim2real.py))

@@ -5,6 +5,8 @@ description: >-
   files, videos under 10 MB) into a scrubbed bundle with a pre-filled Show and
   tell GitHub Discussions URL. Use only when sharing a robotics example to
   GitHub Discussions. Don't use for creating repos, PRs, or issues.
+metadata:
+  publisher: google
 ---
 
 # Share Robotics Example to GitHub Discussions

@@ -7,6 +7,8 @@ description: >-
   workspace (messages.py, sim_plugin.py, viewer_plugin.py, scene.xml), check
   /_studio/status, or read captured SimHistory frames; load with mujoco-studio.
   Don't use for non-MuJoCo simulations or web viewers.
+metadata:
+  publisher: google
 ---
 
 # MuJoCo Studio Web Sidecar Workflow

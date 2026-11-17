@@ -7,6 +7,8 @@ description: >-
   completion after release and settle. Use only when writing code that makes a
   physical or simulated robot act and move. Don't use for non-robotics software
   engineering, UI/WebGL testing, or general scripting.
+metadata:
+  publisher: google
 ---
 
 # Iterating on robot code

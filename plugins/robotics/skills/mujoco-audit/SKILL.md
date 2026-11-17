@@ -8,6 +8,8 @@ description: >-
   only when the user explicitly names MuJoCo, MJCF, .mjz, or mjSpec to audit,
   validate, or fix a MuJoCo asset. Don't use for non-MuJoCo 3D mesh/CAD/USD
   linters.
+metadata:
+  publisher: google
 ---
 
 # MuJoCo Asset Audit, Verification & Remediation Skill

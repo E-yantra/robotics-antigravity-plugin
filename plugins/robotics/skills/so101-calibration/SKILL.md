@@ -8,6 +8,8 @@ description: >-
   squares. Use only after SO-101 Stage 3 bring-up when calibrating a physical
   SO-101 arm to a fixed camera. Don't use for non-robot camera or bed-leveling
   calibration.
+metadata:
+  publisher: google
 ---
 
 # SO-101 Stage 5 (Optional · Requires Fixed Camera) — Tabletop Touch-Down & 3D Hand-Eye Calibration

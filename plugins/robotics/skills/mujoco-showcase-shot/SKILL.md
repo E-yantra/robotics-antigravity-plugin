@@ -7,6 +7,8 @@ description: >-
   collision geoms, and drawing a HUD overlay. Use only when rendering a showcase
   turntable video for a MuJoCo MJCF, .mjz, mjSpec, or MjModel asset. Don't use
   for non-MuJoCo turntable, Filament, OpenGL, or CAD renders.
+metadata:
+  publisher: google
 ---
 
 # MuJoCo Filament Showcase Shot Turntable Video Generator

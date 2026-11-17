@@ -1,6 +1,8 @@
 ---
 name: i2rt-yam-ik
 description: Solves 6-DOF inverse kinematics for the I2RT YAM and YAM Pro robot arm using Mink + DAQP on combined YAM + gripper MJCF. Use only when computing joint targets or local Cartesian moves on an I2RT YAM or YAM Pro robot arm. Don't use for non-YAM inverse kinematics, general quadratic programming (QP) solvers, or non-robotics tasks.
+metadata:
+  publisher: google
 ---
 
 # I2RT YAM Inverse Kinematics (`mink` + `daqp` via [`YamIk`](scripts/yam_ik.py))

@@ -7,6 +7,8 @@ description: >-
   World (Stage 3), and workspace USB bandwidth/frame checks (Stage 4). Use only
   when setting up, calibrating, checking, or operating an SO-101 robot arm and
   cameras. Don't use for non-SO-101 webcam, CNC, or 3D printer tasks.
+metadata:
+  publisher: google
 ---
 
 # SO-101 Hardware Bring-Up, Camera Verification & Stage 3 "Hello World"
