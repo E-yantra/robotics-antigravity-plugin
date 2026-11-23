@@ -1,0 +1,13 @@
+{
+  "name": "robotics-marketplace",
+  "owner": { "name": "local" },
+  "plugins": [
+    {
+      "name": "robotics",
+      "source": "./claude-copilot",
+      "description": "Robotics skills: perception, motion planning, visual servoing, bring-up, sim2real, MuJoCo, SimReady assets.",
+      "version": "0.1.12",
+      "category": "research"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "robotics",
+  "version": "0.1.12",
+  "description": "Robotics skills for any robot: 3D perception, collision-free motion planning, visual servoing, robot bring-up (SO-101, I2RT YAM, FR3 Duo), sim2real, MuJoCo simulation, SimReady 3D asset authoring and physics auditing, and a live MuJoCo Studio browser viewer.",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/google-deepmind/robotics-antigravity-plugin",
+  "keywords": ["robotics", "mujoco", "sim2real", "manipulation", "simulation"],
+  "skills": "./skills"
+}
